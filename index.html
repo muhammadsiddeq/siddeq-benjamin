@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benjamin Hardman | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <a href="index.html" class="logo">
+            <img src="BH-Logo.webp" alt="Benjamin Hardman Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section 1: Full Banner Slider (Arrows par click karne se saari images change hongi) -->
+    <section class="hero-slider">
+        <button class="arrow left" id="prevBtn">&#10094;</button>
+        <img id="sliderImg" src="IMG_9016-3.webp" alt="Polar Photography">
+        <button class="arrow right" id="nextBtn">&#10095;</button>
+    </section>
+
+    <!-- Section 2: Portrait + Intro Text (Neeche Scroll Karne Par) -->
+    <section class="home-intro">
+        <div class="intro-image">
+            <img src="DSC02810.webp" alt="Benjamin Hardman">
+        </div>
+        <div class="intro-text">
+            <h2>BENJAMIN HARDMAN</h2>
+            <h4>PHOTOGRAPHER AND NATURAL HISTORY CINEMATOGRAPHER.</h4>
+            <p>Based in Iceland &amp; specialising in photography and film productions in the Polar Regions.</p>
+        </div>
+    </section>
+
+    <!-- Social Icons & Footer -->
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/muhammad-siddeq" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">IN</a>
+    <a href="https://wa.me/923115609721" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WA</a>
+</div>
+    </div>
+
+    <footer>
+        &copy; 2026 Benjamin Hardman Portfolio. All Rights Reserved.
+    </footer>
+
+    <!-- Banner Slider JavaScript -->
+    <script>
+        const bannerImages = [
+            "IMG_9016-3.webp",
+            "DJI_20240324134815_0324_D.webp",
+            "DJI_20240609153927_0549_D.webp",
+            "DJI_20240823163933_0501_D-Enhanced-NR-2.webp",
+            "DJI_20240826070928_0071_D.webp",
+            "DJI_20240827032525_0396_D-Enhanced-NR.webp",
+            "IMG_3391-Pano-Edit-Edit-5.webp"
+        ];
+
+        let currentIndex = 0;
+        const sliderImg = document.getElementById("sliderImg");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % bannerImages.length;
+            sliderImg.src = bannerImages[currentIndex];
+        });
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + bannerImages.length) % bannerImages.length;
+            sliderImg.src = bannerImages[currentIndex];
+        });
+    </script>
+
+</body>
+</html>
